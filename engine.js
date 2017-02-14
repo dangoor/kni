@@ -1,8 +1,8 @@
 'use strict';
 
-var Story = require('./story');
-var evaluate = require('./evaluate');
-var describe = require('./describe');
+var Story = require('./story.js');
+var evaluate = require('./evaluate.js');
+var describe = require('./describe.js');
 
 module.exports = Engine;
 

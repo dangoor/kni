@@ -1,9 +1,9 @@
 'use strict';
 
-var equals = require('pop-equals');
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var InlineLexer = require('./inline-lexer');
+var equals = require('pop-equals.js');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var InlineLexer = require('./inline-lexer.js');
 
 var debug = process.env.DEBUG_INLINE_LEXER;
 

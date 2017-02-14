@@ -1,14 +1,14 @@
 'use strict';
 
-var xorshift = require('xorshift');
-var Engine = require('./engine');
-var Console = require('./console');
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var InlineLexer = require('./inline-lexer');
-var Parser = require('./parser');
-var Story = require('./story');
-var grammar = require('./grammar');
+var xorshift = require('xorshift.js');
+var Engine = require('./engine.js');
+var Console = require('./console.js');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var InlineLexer = require('./inline-lexer.js');
+var Parser = require('./parser.js');
+var Story = require('./story.js');
+var grammar = require('./grammar.js');
 
 module.exports = verify;
 

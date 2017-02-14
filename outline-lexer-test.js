@@ -1,10 +1,10 @@
 'use strict';
 
-var fs = require('fs');
+var fs = require('fs.js');
 
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var equals = require('pop-equals');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var equals = require('pop-equals.js');
 
 var debug = process.env.DEBUG_OUTLINE_LEXER;
 

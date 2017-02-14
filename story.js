@@ -1,6 +1,6 @@
 'use strict';
 
-var Path = require('./path');
+var Path = require('./path.js');
 
 var constructors = {};
 

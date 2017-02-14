@@ -1,8 +1,8 @@
 'use strict';
 
-var Path = require('./path');
-var story = require('./story');
-var expression = require('./expression');
+var Path = require('./path.js');
+var story = require('./story.js');
+var expression = require('./expression.js');
 
 exports.start = start;
 

@@ -2,8 +2,8 @@
 
 module.exports = Console;
 
-var Excerpt = require('./excerpt');
-var Wrapper = require('./wrapper');
+var Excerpt = require('./excerpt.js');
+var Wrapper = require('./wrapper.js');
 
 function Console(writer) {
     this.writer = writer;

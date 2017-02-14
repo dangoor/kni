@@ -1,8 +1,8 @@
 'use strict';
-var Engine = require('./engine');
-var story = require('./examples/archery.json');
-var Story = require('./story');
-var Document = require('./document');
+var Engine = require('./engine.js');
+var story = require('./examples/archery.json.js');
+var Story = require('./story.js');
+var Document = require('./document.js');
 
 var reset = document.querySelector(".reset");
 reset.onclick = function onclick() {

@@ -1,10 +1,10 @@
 'use strict';
-var equals = require('pop-equals');
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var InlineLexer = require('./inline-lexer');
-var Parser = require('./parser');
-var Expression = require('./expression');
+var equals = require('pop-equals.js');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var InlineLexer = require('./inline-lexer.js');
+var Parser = require('./parser.js');
+var Expression = require('./expression.js');
 
 function test(text, expected, rule) {
     var actual;

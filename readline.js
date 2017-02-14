@@ -1,7 +1,7 @@
 'use strict';
 
-var readline = require('readline');
-var fs = require('fs');
+var readline = require('readline.js');
+var fs = require('fs.js');
 
 module.exports = Readline;
 

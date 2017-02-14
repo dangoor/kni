@@ -1,24 +1,24 @@
 #!/usr/bin/env node
 'use strict';
 
-var fs = require('fs');
-var tee = require('tee');
-var Console = require('./console');
-var Readline = require('./readline');
-var Engine = require('./engine');
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var InlineLexer = require('./inline-lexer');
-var Parser = require('./parser');
-var Story = require('./story');
-var grammar = require('./grammar');
-var verify = require('./verify');
-var exec = require('shon/exec');
-var usage = require('./kni.json');
-var xorshift = require('xorshift');
-var table = require('table').default;
-var getBorderCharacters = require('table').getBorderCharacters;
-var describe = require('./describe');
+var fs = require('fs.js');
+var tee = require('tee.js');
+var Console = require('./console.js');
+var Readline = require('./readline.js');
+var Engine = require('./engine.js');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var InlineLexer = require('./inline-lexer.js');
+var Parser = require('./parser.js');
+var Story = require('./story.js');
+var grammar = require('./grammar.js');
+var verify = require('./verify.js');
+var exec = require('shon/exec.js');
+var usage = require('./kni.json.js');
+var xorshift = require('xorshift.js');
+var table = require('table.js').default;
+var getBorderCharacters = require('table.js').getBorderCharacters;
+var describe = require('./describe.js');
 
 function main() {
     var config = exec(usage);

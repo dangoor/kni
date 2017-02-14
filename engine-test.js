@@ -1,7 +1,7 @@
 'use strict';
 
-var fs = require('fs');
-var verify = require('./verify');
+var fs = require('fs.js');
+var verify = require('./verify.js');
 
 function main() {
     test('hello.kni', 'tests/hello.1');
