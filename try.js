@@ -1,13 +1,13 @@
 "use strict";
 
-var Console = require('./console');
-var Engine = require('./engine');
-var Scanner = require('./scanner');
-var OutlineLexer = require('./outline-lexer');
-var InlineLexer = require('./inline-lexer');
-var Parser = require('./parser');
-var Story = require('./story');
-var grammar = require('./grammar');
+var Console = require('./console.js');
+var Engine = require('./engine.js');
+var Scanner = require('./scanner.js');
+var OutlineLexer = require('./outline-lexer.js');
+var InlineLexer = require('./inline-lexer.js');
+var Parser = require('./parser.js');
+var Story = require('./story.js');
+var grammar = require('./grammar.js');
 
 'use strict';
 
