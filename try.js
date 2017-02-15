@@ -176,7 +176,7 @@ function updateURL() {
         waypoint: currentWaypoint,
         script: cm.getValue(),
     };
-    window.history.replaceState(currentState, '', '#' + btoa(JSON.stringify(currentState)));
+    window.history.replaceState(currentState, '', '#' + encodeURIComponent(JSON.stringify(currentState)));
 }
 
 function startGame() {
@@ -217,8 +217,13 @@ function reloadFromURL() {
         return;
     }
     currentState = currentState.slice(1);
-    currentState = atob(currentState);
-    currentState = JSON.parse(currentState);
+    currentState = decodeURIComponent(currentState);
+    try {
+        currentState = JSON.parse(currentState);
+    } catch (e) {
+        console.error("Unable to parse URL contents");
+        currentState = null;
+    }
     cm.setValue(currentState.script);
     currentWaypoint = currentState.waypoint;
     startGame();
