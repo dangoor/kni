@@ -165,10 +165,21 @@ var cm = window.cm = CodeMirror(document.getElementById("editor"),
     value: "Test content\n\n",
 });
 
+cm.setSize("100%", "100%");
+
 var preview = document.getElementById("preview");
 var doc = new Document(preview);
 
-document.getElementById("run_button").addEventListener("click", function() {
+var currentWaypoint = null;
+function updateURL() {
+    var currentState = {
+        waypoint: currentWaypoint,
+        script: cm.getValue(),
+    };
+    window.history.replaceState(currentState, '', '#' + btoa(JSON.stringify(currentState)));
+}
+
+function startGame() {
     doc.clear();
     preview.innerHTML = "";
     var story = new Story();
@@ -184,6 +195,10 @@ document.getElementById("run_button").addEventListener("click", function() {
         render: doc,
         dialog: doc,
         handler: {
+            waypoint: function(waypoint) {
+                currentWaypoint = waypoint;
+                updateURL();
+            },
             goto: function _goto(label) {
                 console.log(label);
             },
@@ -193,5 +208,27 @@ document.getElementById("run_button").addEventListener("click", function() {
         }
     });
 
-    engine.resume();
+    engine.resume(currentWaypoint);
+}
+
+function reloadFromURL() {
+    var currentState = window.location.hash;
+    if (!currentState) {
+        return;
+    }
+    currentState = currentState.slice(1);
+    currentState = atob(currentState);
+    currentState = JSON.parse(currentState);
+    cm.setValue(currentState.script);
+    currentWaypoint = currentState.waypoint;
+    startGame();
+}
+
+reloadFromURL();
+
+document.getElementById("run_button").addEventListener("click", startGame);
+document.getElementById("reset_button").addEventListener("click", function() {
+    currentWaypoint = null;
+    updateURL();
+    startGame();
 });

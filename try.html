@@ -3,6 +3,7 @@
 <style>
 #main {
     display: flex;
+    height: calc(100vh - 50px);
 }
 
 #editor {
@@ -11,41 +12,6 @@
 
 #preview {
     width: 50%;
-}
-
-.kni-frame {
-    height: 100%;
-    width: 100%;
-    overflow-y: scroll;
-    transition: transform 1s ease, opacity 1s ease-out;
-}
-
-.kni-frame-a {
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-
-.kni-frame-b {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 1em;
-    width: 40ex;
-}
-
-.kni-frame-c {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.kni-body {
-    display: flex-item;
-    flex: 0 1 auto;
-    max-width: 40ex;
-    text-align: justify;
 }
 
 th {
@@ -57,50 +23,12 @@ td {
     vertical-align: top;
     cursor: pointer;
 }
-
-li {
-    list-style-type: decimal;
-}
-
-a {
-    color: inherit;
-    font-family: 200%;
-}
-
-a:link {
-    color: inherit;
-}
-
-a:hover {
-    color: inherit;
-}
-
-a:visited {
-    color: inherit;
-}
-
-.about {
-    position: absolute;
-    height: 1em;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    z-index: 100;
-}
-
-.reset {
-    position: absolute;
-    height: 1em;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
-}
-
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/codemirror.css">
 <body>
     <div class="controls">
         <button id="run_button">Run it</button>
+        <button id="reset_button">Start Game Over</button>
     </div>
     <div id="main">
         <div id="editor"></div>
