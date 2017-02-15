@@ -163,14 +163,17 @@ Document.prototype.close = function close() {
 var cm = window.cm = CodeMirror(document.getElementById("editor"),
 {
     value: "Test content\n\n",
+    lineNumbers: true,
 });
 
 cm.setSize("100%", "100%");
 
 var preview = document.getElementById("preview");
 var doc = new Document(preview);
-
 var currentWaypoint = null;
+var currentStoryStates = {};
+var lastEditorContents = "";
+
 function updateURL() {
     var currentState = {
         waypoint: currentWaypoint,
@@ -190,6 +193,7 @@ function startGame() {
     var s = new Scanner(ol);
     s.next(cm.getValue());
     s.return();
+    currentStoryStates = story.states;
     var engine = new Engine({
         story: story.states,
         render: doc,
@@ -231,9 +235,25 @@ function reloadFromURL() {
 
 reloadFromURL();
 
+function changeModes() {
+    var modeButton = document.getElementById("mode_button");
+    if (modeButton.innerHTML === "JSON") {
+        modeButton.innerHTML = "Kni";
+        lastEditorContents = cm.getValue();
+        cm.setOption("readOnly", true);
+        cm.setValue(JSON.stringify(currentStoryStates, null, 2));
+    } else {
+        modeButton.innerHTML = "JSON";
+        cm.setValue(lastEditorContents);
+        cm.setOption("readOnly", false);
+    }
+}
+
 document.getElementById("run_button").addEventListener("click", startGame);
 document.getElementById("reset_button").addEventListener("click", function() {
     currentWaypoint = null;
     updateURL();
     startGame();
 });
+
+document.getElementById("mode_button").addEventListener("click", changeModes);
