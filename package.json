@@ -44,7 +44,7 @@
   "scripts": {
     "test": "npm ls -s && npm run lint && npm run cover -s",
     "lint": "eslint .",
-    "build": "node kni.js examples/archery.kni -j > examples/archery.json && bundle index.js > bundle.js",
+    "build": "node kni.js examples/archery.kni -j > examples/archery.json && bundle index.js > bundle.js && bundle try.js > try_bundle.js",
     "cover": "istanbul cover --report html --print node -- test.js && istanbul report text && npm run check-cover -s",
     "check-cover": "istanbul check-coverage",
     "view-cover": "opn ./coverage/index.html",
