@@ -164,6 +164,7 @@ var cm = window.cm = CodeMirror(document.getElementById("editor"),
 {
     value: "Test content\n\n",
     lineNumbers: true,
+    lineWrapping: true,
 });
 
 cm.setSize("100%", "100%");
